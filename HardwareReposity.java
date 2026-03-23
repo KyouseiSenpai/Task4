@@ -26,9 +26,12 @@ public class HardwareRepository {
                     int spec = rs.getInt("Spec");
                     String type = rs.getString("Type");
 
-                    
-                }
-
+                   if (type.equalsIgnoreCase("Laptop")) {
+                        hardwareList.add(new Laptop(id, brand, spec));
+                    } else if (type.equalsIgnoreCase("Phone")) {
+                        hardwareList.add(new Phone(id, brand, spec));
+                    }
+                } return hardwareList;
 
             } catch (SQLException e) {}
         }
